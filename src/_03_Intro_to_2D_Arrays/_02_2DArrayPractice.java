@@ -31,8 +31,8 @@ public class _02_2DArrayPractice {
      *          6, 7, 8
      */
     public Integer[][] test1() {
-        
-        return null;
+    	
+        return new Integer[3][3];
     }
     
     /*
@@ -42,7 +42,7 @@ public class _02_2DArrayPractice {
      */
     public String[][] test2() {
         
-        return null;
+        return new String[2][4];
     }
     
     /*
@@ -53,9 +53,11 @@ public class _02_2DArrayPractice {
      *          true, true,
      *          true, false
      */
+    
     public Boolean[][] test3() {
-        
-        return null;
+    
+    	
+        return new Boolean[5][2];
     }
     
     /*
@@ -63,18 +65,22 @@ public class _02_2DArrayPractice {
      * Assume all the elements in the 2D array are initialized to random ints
      * 
      * int[][] grid = new int[2][3];
-     * 
+     * 2, 4 ,6
+     * 3, 7, 2
      * 
      * 
      * Show your teacher the grid you created
      */
-    
+    				
     /*
      * Draw the grid of values for the following 2D array of Robots
      * Assume all the elements in the 2D array are initialized.
      * 
      * Robot[][] robots = new Robot[4][2];
-     * 
+     * rob1, rob2
+     * rob3, rob4, 
+     * rob5, rob6
+     * rob7 , rob8
      * 
      * 
      * Show your teacher the grid you created
@@ -83,21 +89,23 @@ public class _02_2DArrayPractice {
     /* Given the array of Objects below, return the element that is not null
      *          null, null, null, null
      *          null, null, null, Object
+     *          Object [2][4]
      */
     public Object test4() {
         Object[][] objects = { {null, null, null, null}, {null, null, null, new Object()} };
         
-        return null;
+        return objects[1][3];
     }
     
     /* Given the array of Objects below, return the element that is not null
      *          null, null, Object, null
      *          null, null, null, null
+     *          Object [1][3]
      */
     public Object test5() {
         Object[][] objects = { {null, null, new Object(), null}, {null, null, null, null} };
         
-        return null;
+        return objects[1][3];
     }
     
     /*
@@ -106,8 +114,9 @@ public class _02_2DArrayPractice {
      */
     public Integer test6() {
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
-        
-        return null;
+        for(int i = 8; nums.length>=0; i--) {
+        return i;
+        }
     }
     
     /*
