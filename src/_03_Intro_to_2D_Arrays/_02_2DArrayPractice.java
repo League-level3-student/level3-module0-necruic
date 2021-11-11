@@ -107,7 +107,7 @@ public class _02_2DArrayPractice {
     public Object test5() {
         Object[][] objects = { {null, null, new Object(), null}, {null, null, null, null} };
         
-        return objects[1][3];
+        return objects[0][2];
     }
     
     /*
@@ -195,16 +195,22 @@ public class _02_2DArrayPractice {
         if (col>0) {
         	return matrix[row][col-1];
         }
-        else {}
+        
         return null;
     }
     
     public Integer getNorthNeighbor(int[][] matrix, int row, int col) {
-        if (row>0)
+        if (row>0) {
+        	return matrix[row-1][col];
+        }
+        
+        return null;
     }
     
     public Integer getSouthNeighbor(int[][] matrix, int row, int col) {
-        
+        if (row<matrix.length-1) {
+        	return matrix[row+1][col];
+        }
         return null;
     }
 }
