@@ -49,11 +49,21 @@
 package _07_The_Wrong_Way_Cow;
 
 public class TheWrongWayCow {
-
+	
+	int x;
+	int y;
+	
+	
     public static int[] findWrongWayCow(final char[][] field) {
         // Fill in the code to return the [col, row] coordinate position of the
         // head (letter 'c') of the wrong way cow!
         
-        return null;
+        return (x, y);
+    }
+    public int getX() {
+    	return x;
+    }
+    public int getY() {
+    	return y;
     }
 }
