@@ -51,46 +51,67 @@ package _07_The_Wrong_Way_Cow;
 import java.util.HashMap;
 
 public class TheWrongWayCow {
-	
+
 	int x;
 	int y;
-	
-	
-    public static int[] findWrongWayCow(final char[][] field) {
-        // Fill in the code to return the [col, row] coordinate position of the
-        // head (letter 'c') of the wrong way cow!
-    	int north = 0;
-    	int south = 0;
-    	int east = 0;
-    	int west = 0;
-    	HashMap<String, int[]>hm = new HashMap< String, int[]>(4);
-        for (int i = 0; i < field.length; i++) {
-			 for (int j = 0; j < field[i].length; j++) {
-				 if (hm.size()>1 && (north+south+east+west>2)) {
-					 i=field.length;
-							 break;
-				 }
-				 if (field [i][j] == 'c') {
-					 int numRows = field.length;
-	                    int numCols = field[i].length;
-	                    
-	                    // North
-	                    if( northCnt < 2 ) {
-	                        if( i + 2 < numRows && field[i+1][j] == 'o' && field[i+2][j] == 'w' ) {
-	                            hm.put( "north", new int[] { j, i } );
-	                            northCnt++;
-	                            continue;
-	                        }
-	                    }
-	if( northCnt == 1 ) {
-	           return hm.get( "north" );
-	        }
 
-				 }
-		
-			 }
+	public static int[] findWrongWayCow(final char[][] field) {
+		// Fill in the code to return the [col, row] coordinate position of the
+		// head (letter 'c') of the wrong way cow!
+		int north = 0;
+		int south = 0;
+		int east = 0;
+		int west = 0;
+		HashMap<String, int[]> hm = new HashMap<String, int[]>(4);
+		for (int i = 0; i < field.length; i++) {
+			for (int j = 0; j < field[i].length; j++) {
+				if (hm.size() > 1 && (north + south + east + west > 2)) {
+					i = field.length;
+					break;
+				}
+				if (field[i][j] == 'c') {
+					int numRows = field.length;
+					int numCols = field[i].length;
+
+					// North
+					if (north < 2) {
+						if (i + 2 < numRows && field[i + 1][j] == 'o' && field[i + 2][j] == 'w') {
+							hm.put("north", new int[] { j, i });
+							north++;
+							continue;
+						}
+					}
+					if (south < 2) {
+						if (i - 2 < 0 && field[i+1][j] == 'o' && field[i +2][j] == 'w') {
+							hm.put("south", new int[] { j, i});
+							south++;
+							continue;
+						}
+					}
+					if (east < 1) {
+						if (i +1 < numColumns && field[i+1][j] == 'o' && field[i+2][j] == 'w') {
+							hm.put("east", new int[] {j, i});
+							east++;
+							continue;
+						}
+					}
+					if (west < 1) {
+						if (i + 1 <0 && field[i+1][j] == 'o' && field[i+2][j] == 'w') {
+							hm.put("west", new int[] {j, i});
+							west++;
+							continue;
+						}
+					}
+
+				}
+
+			}
 		}
-        return null;
-    }
-   
+		if (north == 1) {
+			return hm.get("north");
+		}
+
+		return null;
+	}
+
 }
