@@ -82,21 +82,21 @@ public class TheWrongWayCow {
 						}
 					}
 					if (south < 2) {
-						if (i - 2 < 0 && field[i+1][j] == 'o' && field[i +2][j] == 'w') {
+						if (i - 2 >= 0 && field[i-1][j] == 'o' && field[i -2][j] == 'w') {
 							hm.put("south", new int[] { j, i});
 							south++;
 							continue;
 						}
 					}
-					if (east < 1) {
-						if (i +1 < numColumns && field[i+1][j] == 'o' && field[i+2][j] == 'w') {
+					if (east < 2) {
+						if (j +2 < numCols && field[i][j+1] == 'o' && field[i][j+2] == 'w') {
 							hm.put("east", new int[] {j, i});
 							east++;
 							continue;
 						}
 					}
-					if (west < 1) {
-						if (i + 1 <0 && field[i+1][j] == 'o' && field[i+2][j] == 'w') {
+					if (west < 2) {
+						if (j - 2 >= 0 && field[i][j-1] == 'o' && field[i][j-2] == 'w') {
 							hm.put("west", new int[] {j, i});
 							west++;
 							continue;
@@ -109,6 +109,15 @@ public class TheWrongWayCow {
 		}
 		if (north == 1) {
 			return hm.get("north");
+		}
+		if (south == 1) {
+			return hm.get("south");
+		}
+		if (east == 1) {
+			return hm.get("east");
+		}
+		if (west == 1) {
+			return hm.get("west");
 		}
 
 		return null;
